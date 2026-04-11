@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">NoDrftSystems</title>
+  <desc id="logoDesc">NoDrftSystems brand mark with geometric N icon and wordmark</desc>
+  <defs>
+    <!-- Primary accent: oxidized slate teal -->
+    <linearGradient id="teal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B5854"/>
+      <stop offset="100%" stop-color="#3A7A74"/>
+    </linearGradient>
+    <!-- Secondary accent: burnished copper (sparse use) -->
+    <linearGradient id="copper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C5B28"/>
+      <stop offset="100%" stop-color="#7A4620"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Geometric N Mark -->
+  <g transform="translate(6 6)">
+    <!-- Left copper triangle -->
+    <path d="M0 24 L18 0 L18 48 L0 24Z" fill="url(#copper-grad)" opacity="0.9"/>
+    <!-- Right teal triangle -->
+    <path d="M20 24 L38 0 L38 48 L20 24Z" fill="url(#teal-grad)"/>
+    <!-- Center connecting element -->
+    <path d="M18 16 L20 16 L20 32 L18 32 Z" fill="#1D3F3C"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <g transform="translate(56 14)">
+    <text x="0" y="28" fill="#1A1A18" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="-0.5">
+      NoDrft<tspan fill="#2B5854" font-weight="700">Systems</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">NoDrftSystems geometric logo</title>
+  <desc id="logoDesc">Geometric wireframe mark with the NoDrftSystems wordmark.</desc>
+  <defs>
+    <linearGradient id="logo-line" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4fbff" />
+      <stop offset="42%" stop-color="#9edfff" />
+      <stop offset="100%" stop-color="#54c8ff" />
+    </linearGradient>
+    <linearGradient id="logo-line-soft" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ba6ff" />
+      <stop offset="100%" stop-color="#d6f4ff" />
+    </linearGradient>
+    <linearGradient id="logo-word" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f8fcff" />
+      <stop offset="55%" stop-color="#dceeff" />
+      <stop offset="100%" stop-color="#8ed8ff" />
+    </linearGradient>
+    <linearGradient id="logo-word-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bfe9ff" />
+      <stop offset="100%" stop-color="#49beff" />
+    </linearGradient>
+    <filter id="logo-spark" x="-80%" y="-80%" width="260%" height="260%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#73d3ff" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <g transform="translate(16 18)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="url(#logo-line)" stroke-width="4.2">
+        <path d="M52 10 20 28v64l32 18 32-18V28Z" />
+        <path d="M92 34 60 52v64l32 18 32-18V52Z" />
+        <path d="M52 10 92 34" />
+        <path d="M20 28 60 52" />
+        <path d="M20 92 60 116" />
+        <path d="M52 110 92 134" />
+        <path d="M84 92 124 116" />
+        <path d="M84 28 124 52" />
+        <path d="M52 10V110" />
+        <path d="M84 28V92" />
+        <path d="M60 52V116" />
+        <path d="M92 34V134" />
+      </g>
+      <g stroke="url(#logo-line-soft)" stroke-width="3.2" opacity="0.94">
+        <path d="M20 60 84 28 124 52" />
+        <path d="M20 92 84 60 124 84" />
+        <path d="M52 10 124 52" />
+        <path d="M20 28 84 60 52 110" />
+        <path d="M52 60 92 34" />
+        <path d="M52 60 84 92" />
+        <path d="M60 52 124 116" />
+        <path d="M84 28 20 92" />
+        <path d="M84 92 60 116" />
+        <path d="M0 120 44 96" />
+        <path d="M6 136 54 110" />
+      </g>
+    </g>
+
+    <g fill="#edf8ff" stroke="#7bcfff" stroke-width="2">
+      <circle cx="52" cy="10" r="5.6" />
+      <circle cx="20" cy="28" r="5.6" />
+      <circle cx="84" cy="28" r="5.6" />
+      <circle cx="52" cy="60" r="6.6" />
+      <circle cx="84" cy="60" r="5.8" />
+      <circle cx="60" cy="52" r="5.8" />
+      <circle cx="92" cy="34" r="5.8" />
+      <circle cx="92" cy="82" r="5.8" />
+      <circle cx="84" cy="92" r="5.8" />
+      <circle cx="60" cy="84" r="5.8" />
+      <circle cx="20" cy="92" r="5.6" />
+      <circle cx="52" cy="110" r="5.6" />
+      <circle cx="60" cy="116" r="5.6" />
+      <circle cx="92" cy="134" r="5.6" />
+      <circle cx="124" cy="52" r="5.6" />
+      <circle cx="124" cy="84" r="5.6" />
+      <circle cx="124" cy="116" r="5.6" />
+    </g>
+
+    <g filter="url(#logo-spark)" fill="none" stroke="url(#logo-line)" stroke-linecap="round">
+      <g stroke-width="2.4" opacity="0.78">
+        <path d="M142 10v18" />
+        <path d="M133 19h18" />
+        <path d="M136 13l12 12" />
+        <path d="M148 13 136 25" />
+      </g>
+      <g stroke-width="2" opacity="0.64">
+        <path d="M-2 64v10" />
+        <path d="M-7 69H3" />
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(186 42)">
+    <text
+      x="0"
+      y="54"
+      fill="url(#logo-word)"
+      font-family="Inter, Helvetica Neue, Arial, sans-serif"
+      font-size="58"
+      font-weight="700"
+      letter-spacing="-1.2">
+      NoDrft<tspan fill="url(#logo-word-accent)">Systems</tspan>
+    </text>
+    <g transform="translate(2 82)" fill="none" stroke="url(#logo-line-soft)" stroke-linecap="round" opacity="0.85">
+      <path d="M0 10h66" stroke-width="2.6" />
+      <path d="M206 10h66" stroke-width="2.6" />
+    </g>
+    <text
+      x="80"
+      y="96"
+      fill="#9cbad0"
+      font-family="Inter, Helvetica Neue, Arial, sans-serif"
+      font-size="16"
+      font-weight="600"
+      letter-spacing="4.8">
+      GEOMETRIC SYSTEMS
+    </text>
+  </g>
+</svg>

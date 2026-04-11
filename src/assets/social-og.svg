@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2F1EC"/>
+      <stop offset="100%" stop-color="#E8E6DF"/>
+    </linearGradient>
+    <linearGradient id="teal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B5854"/>
+      <stop offset="100%" stop-color="#3A7A74"/>
+    </linearGradient>
+    <linearGradient id="copper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9C5B28"/>
+      <stop offset="100%" stop-color="#7A4620"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+  
+  <!-- Geometric accent -->
+  <g transform="translate(100 165)" opacity="0.08">
+    <path d="M0 150 L100 0 L200 150 L100 300 Z" fill="#2B5854"/>
+  </g>
+  
+  <!-- Logo mark -->
+  <g transform="translate(100 240)">
+    <path d="M0 60 L45 0 L45 120 L0 60Z" fill="url(#copper-grad)"/>
+    <path d="M55 60 L100 0 L100 120 L55 60Z" fill="url(#teal-grad)"/>
+    <path d="M45 40 L55 40 L55 80 L45 80 Z" fill="#1D3F3C"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <g transform="translate(240 285)">
+    <text x="0" y="60" fill="#1A1A18" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="72" font-weight="600" letter-spacing="-1.5">
+      NoDrft<tspan fill="#2B5854" font-weight="700">Systems</tspan>
+    </text>
+  </g>
+  
+  <!-- Tagline -->
+  <g transform="translate(240 360)">
+    <text x="0" y="0" fill="#56564E" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="400" letter-spacing="0.5">
+      Zero Drift. Structured to last.
+    </text>
+  </g>
+  
+  <!-- Bottom accent line -->
+  <rect x="100" y="480" width="400" height="4" fill="#2B5854" opacity="0.3"/>
+</svg>

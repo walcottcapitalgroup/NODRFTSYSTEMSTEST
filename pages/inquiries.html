@@ -1,0 +1,106 @@
+<section class="nd-section" aria-labelledby="inq-heading">
+  <div class="nd-wrap-narrow">
+    <h1 id="inq-heading" class="nd-h1 fade-up" data-en="Inquiries" data-es="Consultas">Inquiries</h1>
+    <p class="nd-p fade-up" style="font-size: 17px;"
+      data-en="For general contact, partnerships, media, or non-project correspondence. If you have a specific project, use Start an Engagement instead."
+      data-es="Para contacto general, alianzas o medios. Si tiene un proyecto, use Iniciar un Proyecto.">
+      For general contact, partnerships, media, or non-project correspondence. If you have a specific project, use Start an Engagement instead.
+    </p>
+    <p class="nd-fit-note fade-up fade-d1"
+      data-en="This form is not a secure channel. Do not submit regulated records, confidential client information, passwords, or detailed project briefs here."
+      data-es="Este formulario no es un canal seguro. No envíe registros regulados, información confidencial de clientes, contraseñas ni briefs detallados de proyecto aquí.">
+      This form is not a secure channel. Do not submit regulated records, confidential client information, passwords, or detailed project briefs here.
+    </p>
+  </div>
+</section>
+
+<section class="nd-section alt" aria-label="Inquiries form">
+  <div class="nd-wrap-narrow">
+    <div data-form-wrap>
+
+      <!-- Form mode notice -->
+      <aside class="nd-fit-note nd-form-notice" aria-labelledby="inq-route-heading" data-form-availability aria-live="polite">
+        <p class="nd-label" data-form-mode-eyebrow></p>
+        <strong id="inq-route-heading" class="nd-form-mode-title" data-form-mode-title></strong>
+        <span class="nd-form-mode-body" data-form-mode-body></span>
+      </aside>
+
+      <form class="js-form" novalidate aria-labelledby="inq-heading"
+        data-endpoint-meta="ndrf-form-inquiries-endpoint"
+        data-form-kind="inquiry">
+
+        <div class="nd-form-row">
+          <div class="form__group">
+            <label class="form__label" for="inq-first-name" data-en="First name" data-es="Nombre">First name</label>
+            <input class="nd-input form__input" type="text" id="inq-first-name" name="firstName" required
+              autocomplete="given-name"
+              data-error="First name is required." data-error-es="El nombre es obligatorio.">
+            <span class="form__error" role="alert"></span>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="inq-last-name" data-en="Last name" data-es="Apellido">Last name</label>
+            <input class="nd-input form__input" type="text" id="inq-last-name" name="lastName" required
+              autocomplete="family-name"
+              data-error="Last name is required." data-error-es="El apellido es obligatorio.">
+            <span class="form__error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="nd-form-row">
+          <div class="form__group">
+            <label class="form__label" for="inq-email" data-en="Email" data-es="Correo electrónico">Email</label>
+            <input class="nd-input form__input" type="email" id="inq-email" name="email" required
+              autocomplete="email"
+              data-error="A valid email is required." data-error-es="Se requiere un correo válido."
+              data-error-invalid="Please enter a valid email address." data-error-invalid-es="Por favor ingrese una dirección de correo válida.">
+            <span class="form__error" role="alert"></span>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="inq-org" data-en="Organization (optional)" data-es="Organización (opcional)">Organization (optional)</label>
+            <input class="nd-input form__input" type="text" id="inq-org" name="organization" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="inq-type" data-en="Inquiry type" data-es="Tipo de consulta">Inquiry type</label>
+          <select class="nd-input form__input" id="inq-type" name="inquiryType" required
+            data-error="Please select an inquiry type." data-error-es="Por favor seleccione un tipo de consulta.">
+            <option value="" data-en="Select type..." data-es="Seleccione un tipo..."></option>
+            <option value="general" data-en="General question" data-es="Pregunta general"></option>
+            <option value="press" data-en="Press request" data-es="Solicitud de prensa"></option>
+            <option value="partnership" data-en="Partnership or referral" data-es="Alianza o referencia"></option>
+            <option value="other" data-en="Other" data-es="Otro"></option>
+          </select>
+          <span class="form__error" role="alert"></span>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="inq-message" data-en="Message" data-es="Mensaje">Message</label>
+          <textarea class="nd-input form__input" id="inq-message" name="message" required rows="6"
+            data-error="Please enter a message." data-error-es="Por favor ingrese un mensaje."
+            data-placeholder-en="Tell us how we can help." data-placeholder-es="Cuéntenos cómo podemos ayudar."></textarea>
+          <span class="form__error" role="alert"></span>
+        </div>
+
+        <div>
+          <button class="btn" type="submit"
+            data-en="Send Inquiry" data-es="Enviar Consulta">Send Inquiry</button>
+        </div>
+      </form>
+
+      <!-- Success state -->
+      <div class="form__success" role="status" aria-live="polite">
+        <p class="form__success-body"
+          data-en="Thank you. We've received your inquiry and will respond within three business days."
+          data-es="Gracias. Responderemos en tres días hábiles.">
+          Thank you. We've received your inquiry and will respond within three business days.
+        </p>
+      </div>
+    </div>
+
+    <p class="nd-p-xs nd-section-note">
+      <strong data-en="Looking for project intake?" data-es="¿Busca iniciar un proyecto?">Looking for project intake?</strong>
+      <span data-en=" Use " data-es=" Use "> Use </span><a href="#/start" data-en="Start an Engagement" data-es="Iniciar un Proyecto">Start an Engagement</a><span data-en=" so we can review the objective, scope, and decision path properly." data-es=" para que podamos revisar objetivo, alcance y ruta de decisión correctamente."> so we can review the objective, scope, and decision path properly.</span>
+    </p>
+  </div>
+</section>

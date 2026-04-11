@@ -1,0 +1,357 @@
+<section class="nd-section" aria-labelledby="start-heading">
+  <div class="nd-wrap-narrow">
+    <h1 id="start-heading" class="nd-h1 fade-up" data-en="Start an Engagement" data-es="Iniciar un Proyecto">Start an Engagement</h1>
+    <p class="nd-lead fade-up"
+      data-en="Tell us about your project. We'll assess fit, recommend a package, and define scope before any work begins."
+      data-es="Cuéntenos sobre su proyecto. Evaluaremos el ajuste, recomendaremos un paquete y definiremos el alcance antes de cualquier trabajo.">
+      Tell us about your project. We'll assess fit, recommend a package, and define scope before any work begins.
+    </p>
+    <p class="nd-fit-note fade-up fade-d1"
+      data-en="We evaluate every inquiry against scope clarity, decision velocity, budget reality, and communication fit. Not every project is accepted — this protects both sides."
+      data-es="Evaluamos cada consulta contra claridad de alcance, velocidad de decisión, presupuesto y comunicación. No todos los proyectos son aceptados.">
+      We evaluate every inquiry against scope clarity, decision velocity, budget reality, and communication fit. Not every project is accepted — this protects both sides.
+    </p>
+  </div>
+</section>
+
+<section class="nd-section alt" aria-label="Engagement intake form">
+  <div class="nd-wrap-narrow">
+    <div data-form-wrap>
+
+      <!-- Form mode notice (live / preview / offline) -->
+      <aside class="nd-fit-note nd-form-notice" aria-labelledby="form-mode-heading" data-form-availability aria-live="polite">
+        <p class="nd-label" data-form-mode-eyebrow></p>
+        <strong id="form-mode-heading" class="nd-form-mode-title" data-form-mode-title></strong>
+        <span class="nd-form-mode-body" data-form-mode-body></span>
+      </aside>
+
+      <!-- Progress meter -->
+      <aside class="nd-fit-note nd-form-notice" aria-labelledby="progress-heading" data-form-progress role="progressbar" aria-valuemin="0" aria-valuenow="0" aria-valuemax="0">
+        <p class="nd-label" data-en="Submission readiness" data-es="Preparación del envío">Submission readiness</p>
+        <strong id="progress-heading" class="nd-form-mode-title"
+          data-en="Build a complete brief before you submit."
+          data-es="Complete un brief sólido antes de enviar.">Build a complete brief before you submit.</strong>
+        <div class="nd-progress-track" aria-hidden="true">
+          <div class="nd-progress-bar" data-form-progress-bar></div>
+        </div>
+        <div class="nd-progress-meta">
+          <span data-form-progress-summary></span>
+          <span data-form-progress-note></span>
+        </div>
+      </aside>
+
+      <!-- Privacy notice -->
+      <aside class="nd-notice-box" aria-labelledby="privacy-notice-heading">
+        <p class="nd-label" data-en="Privacy and disclosure" data-es="Privacidad y divulgación">Privacy and disclosure</p>
+        <p class="nd-p-xs"
+          data-en="Do not place passwords, regulated records, customer secrets, or highly sensitive data in the free-text fields. The live or preview status shown above reflects what this environment can actually do."
+          data-es="No coloque contraseñas, registros regulados, secretos de clientes ni datos altamente sensibles en los campos de texto libre.">
+          Do not place passwords, regulated records, customer secrets, or highly sensitive data in the free-text fields. The live or preview status shown above reflects what this environment can actually do.
+        </p>
+      </aside>
+
+      <!-- Share panel -->
+      <aside class="nd-notice-box nd-notice-box--lg" aria-labelledby="share-heading">
+        <p class="nd-label" data-en="Decision-team review" data-es="Revisión del equipo de decisión">Decision-team review</p>
+        <strong id="share-heading" class="nd-form-mode-title"
+          data-en="Need another decision-maker to review the brief first?"
+          data-es="¿Necesita que otra persona revise el brief primero?">Need another decision-maker to review the brief first?</strong>
+        <p class="nd-p-xs nd-share-hint"
+          data-en="Shared links place selected scope notes in the URL. Contact fields stay blank and this should not be used for confidential or regulated information."
+          data-es="Los enlaces compartidos colocan notas de alcance en la URL. Los campos de contacto quedan vacíos.">
+          Shared links place selected scope notes in the URL. Contact fields stay blank and this should not be used for confidential or regulated information.
+        </p>
+        <div class="nd-share-actions">
+          <button class="btn--ghost" type="button" data-share-draft-button
+            data-en="Share Review Link" data-es="Compartir enlace de revisión">Share Review Link</button>
+          <p class="nd-p-xs" data-share-status role="status" aria-live="polite"></p>
+        </div>
+      </aside>
+
+      <!-- Shared draft banner -->
+      <aside class="nd-fit-note" style="margin-bottom: 24px;" data-shared-draft-banner hidden aria-live="polite">
+        <p class="nd-label" style="margin-bottom: 4px;" data-en="Shared draft" data-es="Borrador compartido">Shared draft</p>
+        <strong style="display: block; font-size: 14px; color: var(--ink); margin-bottom: 4px;"
+          data-en="A teammate shared this engagement draft."
+          data-es="Una persona del equipo compartió este borrador.">A teammate shared this engagement draft.</strong>
+        <span class="nd-p-xs"
+          data-en="We filled the scope fields only. Confirm the details, add final contact information, and submit only if you own the request."
+          data-es="Solo completamos los campos de alcance. Confirme los detalles, agregue la información final de contacto y envíe solo si usted es responsable.">
+          We filled the scope fields only. Confirm the details, add final contact information, and submit only if you own the request.
+        </span>
+      </aside>
+
+      <!-- The form -->
+      <form class="js-form" novalidate aria-labelledby="start-heading"
+        data-endpoint-meta="ndrf-form-start-endpoint"
+        data-form-kind="engagement"
+        data-shareable="engagement">
+        <input type="hidden" name="sharedDraftId" value="">
+        <input type="hidden" name="sharedDraftSource" value="">
+
+        <!-- Who is asking -->
+        <fieldset class="nd-fieldset">
+          <legend class="nd-label nd-fieldset-legend"
+            data-en="Who is asking" data-es="Quién solicita">Who is asking</legend>
+
+          <div class="nd-form-row">
+            <div class="form__group">
+              <label class="form__label" for="start-first-name" data-en="First name" data-es="Nombre">First name</label>
+              <input class="nd-input form__input" type="text" id="start-first-name" name="firstName" required
+                autocomplete="given-name"
+                data-error="First name is required." data-error-es="El nombre es obligatorio.">
+              <span class="form__error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="start-last-name" data-en="Last name" data-es="Apellido">Last name</label>
+              <input class="nd-input form__input" type="text" id="start-last-name" name="lastName" required
+                autocomplete="family-name"
+                data-error="Last name is required." data-error-es="El apellido es obligatorio.">
+              <span class="form__error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="nd-form-row">
+            <div class="form__group">
+              <label class="form__label" for="start-title" data-en="Title / role" data-es="Cargo">Title / role</label>
+              <input class="nd-input form__input" type="text" id="start-title" name="title" required
+                autocomplete="organization-title"
+                data-error="Title is required." data-error-es="El cargo es obligatorio.">
+              <span class="form__error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="start-org" data-en="Organization" data-es="Organización">Organization</label>
+              <input class="nd-input form__input" type="text" id="start-org" name="organization" required
+                autocomplete="organization"
+                data-error="Organization name is required." data-error-es="El nombre de la organización es obligatorio.">
+              <span class="form__error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="nd-form-row">
+            <div class="form__group">
+              <label class="form__label" for="start-email" data-en="Work email" data-es="Correo profesional">Work email</label>
+              <input class="nd-input form__input" type="email" id="start-email" name="email" required
+                autocomplete="email"
+                data-error="A valid email is required." data-error-es="Se requiere un correo válido."
+                data-error-invalid="Please enter a valid email address." data-error-invalid-es="Por favor ingrese una dirección de correo válida.">
+              <span class="form__error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="start-phone" data-en="Phone (optional)" data-es="Teléfono (opcional)">Phone (optional)</label>
+              <input class="nd-input form__input" type="tel" id="start-phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="start-website" data-en="Website (optional)" data-es="Sitio web (opcional)">Website (optional)</label>
+            <input class="nd-input form__input" type="url" id="start-website" name="website" autocomplete="url"
+              data-placeholder-en="https://example.com" data-placeholder-es="https://example.com">
+          </div>
+        </fieldset>
+
+        <!-- Business objective and scope -->
+        <fieldset class="nd-fieldset">
+          <legend class="nd-label nd-fieldset-legend"
+            data-en="Business objective and scope" data-es="Objetivo y alcance">Business objective and scope</legend>
+
+          <div class="form__group">
+            <label class="form__label" for="start-offer" data-en="Which package is closest?" data-es="¿Qué paquete es el más cercano?">Which package is closest?</label>
+            <select class="nd-input form__input" id="start-offer" name="offer" required
+              data-error="Please select a package." data-error-es="Por favor seleccione un paquete.">
+              <option value="" data-en="Select package..." data-es="Seleccione un paquete..."></option>
+              <option value="discovery-sprint" data-en="Discovery Sprint / Project Clarity Sprint" data-es="Discovery Sprint"></option>
+              <option value="landing-page" data-en="Conversion Landing Page Sprint" data-es="Conversion Landing Page Sprint"></option>
+              <option value="launch-site" data-en="Business Launch Site" data-es="Sitio de Lanzamiento Empresarial"></option>
+              <option value="authority-website" data-en="Authority Website" data-es="Sitio de Autoridad"></option>
+              <option value="platform-starter" data-en="Platform Starter" data-es="Plataforma Inicial"></option>
+              <option value="ecosystem-build" data-en="Ecosystem Build" data-es="Ecosistema Completo"></option>
+              <option value="support" data-en="Support Plans (existing clients)" data-es="Planes de Soporte (clientes existentes)"></option>
+              <option value="not-sure" data-en="Not sure yet" data-es="Todavía no estoy seguro"></option>
+            </select>
+            <span class="form__error" role="alert"></span>
+          </div>
+
+          <div class="nd-form-row">
+            <div class="form__group">
+              <label class="form__label" for="start-context" data-en="What best describes the work?" data-es="¿Qué describe mejor el trabajo?">What best describes the work?</label>
+              <select class="nd-input form__input" id="start-context" name="systemContext" required
+                data-error="Please select a project type." data-error-es="Por favor seleccione un tipo de proyecto.">
+                <option value="" data-en="Select type..." data-es="Seleccione un tipo..."></option>
+                <option value="new-website" data-en="New website build" data-es="Nuevo sitio web"></option>
+                <option value="website-redesign" data-en="Website redesign or improvement" data-es="Rediseño o mejora de sitio"></option>
+                <option value="landing-page" data-en="Landing page or campaign page" data-es="Landing page o página de campaña"></option>
+                <option value="custom-platform" data-en="Custom platform or web application" data-es="Plataforma personalizada o aplicación web"></option>
+                <option value="ongoing-support" data-en="Ongoing support for a live site" data-es="Soporte continuo para un sitio activo"></option>
+                <option value="planning" data-en="Planning and scope definition only" data-es="Solo planificación y definición de alcance"></option>
+                <option value="other" data-en="Other" data-es="Otro"></option>
+              </select>
+              <span class="form__error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="start-investment" data-en="Budget posture" data-es="Postura de presupuesto">Budget posture</label>
+              <select class="nd-input form__input" id="start-investment" name="investmentRange" required
+                data-error="Please select a budget posture." data-error-es="Por favor seleccione una postura de presupuesto.">
+                <option value="" data-en="Select posture..." data-es="Seleccione una opción..."></option>
+                <option value="need-guidance" data-en="Need guidance" data-es="Necesito orientación"></option>
+                <option value="discovery-sprint-budget" data-en="Discovery Sprint budget ($2,000)" data-es="Presupuesto para Discovery Sprint ($2,000)"></option>
+                <option value="landing-page-budget" data-en="Landing Page budget ($2,500)" data-es="Presupuesto para Landing Page ($2,500)"></option>
+                <option value="launch-site-budget" data-en="Business Launch Site budget ($4,800+)" data-es="Presupuesto para Sitio de Lanzamiento ($4,800+)"></option>
+                <option value="authority-site-budget" data-en="Authority Website budget ($8,500+)" data-es="Presupuesto para Sitio de Autoridad ($8,500+)"></option>
+                <option value="platform-budget" data-en="Platform Starter budget ($15,000+)" data-es="Presupuesto para Plataforma Inicial ($15,000+)"></option>
+                <option value="ecosystem-budget" data-en="Ecosystem Build budget ($32,000+)" data-es="Presupuesto para Ecosistema ($32,000+)"></option>
+                <option value="ongoing-support-budget" data-en="Support Plans ($650+/month)" data-es="Planes de Soporte ($650+/mes)"></option>
+              </select>
+              <p class="form__hint"
+                data-en="See the Website Packages page for complete package definitions, scope boundaries, and what is quoted separately."
+                data-es="Vea la página de Paquetes Web para definiciones completas de paquetes, límites de alcance y lo que se cotiza por separado.">
+                See the <a href="#/capabilities">Website Packages</a> page for complete package definitions, scope boundaries, and what is quoted separately.
+              </p>
+              <span class="form__error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="start-challenge"
+              data-en="What are you trying to build or improve?"
+              data-es="¿Qué está intentando construir o mejorar?">What are you trying to build or improve?</label>
+            <textarea class="nd-input form__input" id="start-challenge" name="challenge" required
+              rows="6" style="min-height: 150px;"
+              data-error="Please describe what you need." data-error-es="Por favor describa lo que necesita."
+              data-placeholder-en="Describe the current situation, what needs to change, who the site or system is for, and any constraints you already know."
+              data-placeholder-es="Describa la situación actual, qué debe cambiar, para quién es el sitio o sistema y cualquier restricción que ya conozca."></textarea>
+            <span class="form__error" role="alert"></span>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="start-risk"
+              data-en="What business objective or outcome should this support?"
+              data-es="¿Qué objetivo o resultado del negocio debe apoyar?">What business objective or outcome should this support?</label>
+            <textarea class="nd-input form__input" id="start-risk" name="risk" required rows="4"
+              data-error="Please describe the business objective." data-error-es="Por favor describa el objetivo del negocio."
+              data-placeholder-en="Examples: improve inquiry quality, launch a new offer, support a bilingual audience, or prepare for a bigger digital build."
+              data-placeholder-es="Ejemplos: mejorar la calidad de consultas, lanzar una nueva oferta, atender una audiencia bilingüe o preparar un proyecto digital mayor."></textarea>
+            <span class="form__error" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Constraints and decision path -->
+        <fieldset class="nd-fieldset">
+          <legend class="nd-label nd-fieldset-legend"
+            data-en="Constraints and decision path" data-es="Restricciones y ruta de decisión">Constraints and decision path</legend>
+
+          <div class="form__group">
+            <label class="form__label" for="start-readiness"
+              data-en="What best describes decision readiness?"
+              data-es="¿Qué describe mejor la preparación de decisión?">What best describes decision readiness?</label>
+            <select class="nd-input form__input" id="start-readiness" name="decisionReadiness" required
+              data-error="Please select the current decision state." data-error-es="Por favor seleccione el estado actual de decisión.">
+              <option value="" data-en="Select readiness..." data-es="Seleccione el estado..."></option>
+              <option value="owner-ready" data-en="One owner is ready to move if the fit is strong" data-es="Una persona responsable está lista para avanzar si el ajuste es fuerte"></option>
+              <option value="team-aligned" data-en="A small buying group is aligned and needs scoping" data-es="Un pequeño grupo comprador está alineado y necesita definir alcance"></option>
+              <option value="researching" data-en="We are still comparing options" data-es="Todavía estamos comparando opciones"></option>
+              <option value="general-contact" data-en="This is a general inquiry, press, or careers question" data-es="Es una consulta general, de prensa o de interés profesional"></option>
+            </select>
+            <p class="form__hint"
+              data-en="This route works best when one owner can explain the live need, the decision path, and the constraint set clearly."
+              data-es="Esta ruta funciona mejor cuando una persona responsable puede explicar con claridad la necesidad real, la ruta de decisión y el conjunto de restricciones.">
+              This route works best when one owner can explain the live need, the decision path, and the constraint set clearly.
+            </p>
+            <span class="form__error" role="alert"></span>
+          </div>
+
+          <aside class="nd-fit-note" style="margin-bottom: 16px;" data-fit-guidance hidden aria-live="polite">
+            <strong style="display: block; font-size: 14px; color: var(--ink); margin-bottom: 4px;" data-fit-guidance-title></strong>
+            <span class="nd-p-xs" data-fit-guidance-body></span>
+          </aside>
+
+          <div class="nd-form-row">
+            <div class="form__group">
+              <label class="form__label" for="start-stakeholders"
+                data-en="Decision makers or key stakeholders"
+                data-es="Responsables de decisión o actores clave">Decision makers or key stakeholders</label>
+              <input class="nd-input form__input" type="text" id="start-stakeholders" name="stakeholders" required
+                data-error="Please list the main stakeholders." data-error-es="Por favor indique las personas responsables."
+                data-placeholder-en="Example: Founder, marketing lead, operations lead"
+                data-placeholder-es="Ejemplo: fundador, responsable de marketing, responsable de operaciones">
+              <span class="form__error" role="alert"></span>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="start-timeline"
+                data-en="Desired start window" data-es="Ventana deseada de inicio">Desired start window</label>
+              <select class="nd-input form__input" id="start-timeline" name="timeline">
+                <option value="" data-en="Select timing..." data-es="Seleccione un plazo..."></option>
+                <option value="immediate" data-en="Immediate" data-es="Inmediato"></option>
+                <option value="near" data-en="Near-term" data-es="Corto plazo"></option>
+                <option value="planning" data-en="Planning ahead" data-es="Planificando"></option>
+                <option value="exploring" data-en="Still exploring" data-es="Todavía explorando"></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="start-security"
+              data-en="Compliance, confidentiality, or operating constraints"
+              data-es="Cumplimiento, confidencialidad o restricciones operativas">Compliance, confidentiality, or operating constraints</label>
+            <select class="nd-input form__input" id="start-security" name="securityContext">
+              <option value="" data-en="Select context..." data-es="Seleccione un contexto..."></option>
+              <option value="none" data-en="No formal requirement" data-es="Sin requisito formal"></option>
+              <option value="internal" data-en="Internal policy review" data-es="Revisión de políticas internas"></option>
+              <option value="regulated" data-en="Regulated or compliance-sensitive work" data-es="Trabajo regulado o sensible a compliance"></option>
+              <option value="ip" data-en="Sensitive IP or confidentiality constraints" data-es="IP sensible o restricciones de confidencialidad"></option>
+              <option value="other" data-en="Other" data-es="Otro"></option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="start-referral"
+              data-en="How did you hear about us?" data-es="¿Cómo supo de nosotros?">How did you hear about us?</label>
+            <select class="nd-input form__input" id="start-referral" name="referral">
+              <option value="" data-en="Select source..." data-es="Seleccione una fuente..."></option>
+              <option value="referral" data-en="Client or peer referral" data-es="Referencia de cliente o colega"></option>
+              <option value="search" data-en="Search" data-es="Búsqueda"></option>
+              <option value="linkedin" data-en="LinkedIn" data-es="LinkedIn"></option>
+              <option value="publication" data-en="Article or resource" data-es="Artículo o recurso"></option>
+              <option value="event" data-en="Event" data-es="Evento"></option>
+              <option value="other" data-en="Other" data-es="Otro"></option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Consent -->
+        <div class="form__group" style="margin-bottom: 24px;">
+          <div class="form__checkbox-wrap">
+            <input type="checkbox" id="start-consent" name="consent" required
+              data-error="Please acknowledge to continue." data-error-es="Por favor confirme para continuar.">
+            <label for="start-consent" style="font-size: 14px; font-weight: 400; color: var(--text-md); line-height: 1.5;"
+              data-en="I understand that submitting this form starts an engagement review only. It does not create an agreement, reserve delivery capacity, or guarantee a project start."
+              data-es="Entiendo que enviar este formulario solo inicia una revisión de proyecto. No crea un acuerdo, no reserva capacidad ni garantiza el inicio del trabajo.">
+              I understand that submitting this form starts an engagement review only. It does not create an agreement, reserve delivery capacity, or guarantee a project start.
+            </label>
+          </div>
+          <span class="form__error" role="alert"></span>
+        </div>
+
+        <div>
+          <button class="btn" type="submit"
+            data-en="Submit Engagement Brief" data-es="Enviar brief del proyecto">Submit Engagement Brief</button>
+        </div>
+      </form>
+
+      <!-- Success state -->
+      <div class="form__success" role="status" aria-live="polite">
+        <p class="form__success-body"
+          data-en="Thank you. We've received your inquiry and will respond within two business days with a fit assessment and recommended next step."
+          data-es="Gracias. Hemos recibido su consulta y responderemos en dos días hábiles con evaluación de ajuste y siguiente paso.">
+          Thank you. We've received your inquiry and will respond within two business days with a fit assessment and recommended next step.
+        </p>
+      </div>
+
+    </div><!-- /data-form-wrap -->
+
+    <p class="nd-p-xs nd-section-note">
+      <strong data-en="General question, press, partnership, or career interest?" data-es="¿Pregunta general, prensa, alianza o interés profesional?">General question, press, partnership, or career interest?</strong>
+      <span data-en=" Use " data-es=" Use la ruta de "> Use </span><a href="#/inquiries" data-en="Inquiries" data-es="Consultas">Inquiries</a><span data-en=" instead." data-es=" en lugar de este formulario."> instead.</span>
+    </p>
+  </div>
+</section>
