@@ -1,0 +1,34 @@
+# Dependencies
+.venv/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+_site/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+review-extracts/
+
+# Local-only workspaces and browser profiles
+.claude/
+edge-headless-profile/

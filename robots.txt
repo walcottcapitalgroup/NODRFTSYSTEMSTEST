@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /edge-headless-profile/
+Disallow: /.venv/
+
+Sitemap: https://nodrftsystems.com/sitemap.xml

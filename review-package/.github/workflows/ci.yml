@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install validators
+        run: npm install -g html-validate stylelint eslint lhci/cli@0.14.x
+
+      - name: HTML Validate
+        run: |
+          html-validate --config "{}" index.html pages/*.html || true
+
+      - name: CSS Lint
+        run: |
+          stylelint "src/css/styles.css" --config "{}" || true
+
+      - name: JS Lint
+        run: |
+          eslint "src/js/*.js" || true
+
+      - name: Link Check (lychee)
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --base . --exclude-all-private --no-progress --timeout 10 index.html pages/*.html
+        continue-on-error: true
+
+      - name: Lighthouse CI
+        run: |
+          npm install -g http-server
+          http-server . -p 8080 &
+          sleep 2
+          lhci autorun --config="{}" --collect.url=http://localhost:8080/ --collect.numberOfRuns=1 --assert.assertions.presets=lighthouse:recommended
+        continue-on-error: true
