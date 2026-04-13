@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "missing-doctype": "off",
+    "require-sri": "off",
+    "no-missing-references": "off",
+    "heading-level": "warn"
+  }
+}

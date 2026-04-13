@@ -1,4 +1,4 @@
-name: CI
+name: Validate and Lint
 
 on:
   pull_request:
@@ -19,19 +19,16 @@ jobs:
           node-version: '20'
 
       - name: Install validators
-        run: npm install -g html-validate stylelint eslint lhci/cli@0.14.x
+        run: npm install -g html-validate stylelint eslint@8 lhci/cli@0.14.x
 
       - name: HTML Validate
-        run: |
-          html-validate --config "{}" index.html pages/*.html || true
+        run: html-validate --config .htmlvalidate.json index.html pages/*.html || true
 
       - name: CSS Lint
-        run: |
-          stylelint "src/css/styles.css" --config "{}" || true
+        run: stylelint "src/css/styles.css" --config .stylelintrc.json || true
 
       - name: JS Lint
-        run: |
-          eslint "src/js/*.js" || true
+        run: eslint "src/js/*.js" --config .eslintrc.json || true
 
       - name: Link Check (lychee)
         uses: lycheeverse/lychee-action@v1
@@ -44,5 +41,5 @@ jobs:
           npm install -g http-server
           http-server . -p 8080 &
           sleep 2
-          lhci autorun --config="{}" --collect.url=http://localhost:8080/ --collect.numberOfRuns=1 --assert.assertions.presets=lighthouse:recommended
+          lhci autorun --config=lighthouserc.json
         continue-on-error: true

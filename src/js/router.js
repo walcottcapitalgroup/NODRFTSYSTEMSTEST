@@ -95,8 +95,6 @@ const ROUTES = {
   },
 };
 
-let currentRoute = null;
-
 const SITE_NAME = 'NoDrftSystems';
 const SITE_DESCRIPTION = {
   en: 'Structured website packages and digital builds for teams that need clearer positioning, stronger buyer journeys, and disciplined delivery.',
@@ -302,10 +300,6 @@ function getRouteLang() {
   return parseRoute().lang;
 }
 
-function getLang() {
-  return document.documentElement.lang || 'en';
-}
-
 async function loadPage(routeKey, { sectionId = null } = {}) {
   const route = ROUTES[routeKey] || ROUTES[''];
   const lang = getRouteLang();
@@ -418,7 +412,6 @@ async function loadPage(routeKey, { sectionId = null } = {}) {
     console.error('Router error:', err);
   }
 
-  currentRoute = routeKey;
 }
 
 function init() {

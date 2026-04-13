@@ -9,19 +9,38 @@
 const STORAGE_KEY = 'ndrf-lang';
 const DEFAULT_LANG = 'en';
 
+function getStoredLang() {
+  try {
+    return localStorage.getItem(STORAGE_KEY);
+  } catch (error) {
+    return null;
+  }
+}
+
 function getUrlLang() {
+  if (!window.location.hash) return null;
+
   const hash = window.location.hash.replace(/^#\/?/, '');
   if (hash.startsWith('es/')) return 'es';
   return 'en';
 }
 
 function getLang() {
-  return getUrlLang() || localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+  return getUrlLang() || getStoredLang() || DEFAULT_LANG;
 }
 
 function setLang(lang) {
-  localStorage.setItem(STORAGE_KEY, lang);
+  try {
+    localStorage.setItem(STORAGE_KEY, lang);
+  } catch (error) {
+    // ignore localStorage errors in private browsing
+  }
   document.documentElement.lang = lang;
+}
+
+function syncPreferredHash(lang) {
+  if (window.location.hash || lang !== 'es') return;
+  window.location.hash = '#/es/';
 }
 
 function applyTranslatedAttributes(root, lang) {
@@ -69,6 +88,7 @@ function apply(root = document) {
 
   // Update nav links to stay in current language
   updateNavLinks(lang);
+  updateToggleButton(lang);
   
   // Notify UI components
   window.ndrfUI?.syncLanguage?.(lang);
@@ -99,8 +119,8 @@ function updateToggleButton(lang) {
 function init() {
   const lang = getLang();
   setLang(lang);
+  syncPreferredHash(lang);
   apply();
-  updateToggleButton(lang);
 
   const btn = document.getElementById('lang-toggle');
   if (btn) {
@@ -108,6 +128,6 @@ function init() {
   }
 }
 
-window.i18n = { apply, toggle, getLang };
+window.i18n = { apply, toggle, getLang, setLang };
 
-export { init, apply, toggle, getLang };
+export { init, apply, toggle, getLang, setLang };
