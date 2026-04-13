@@ -214,13 +214,33 @@ function focusPrimaryHeading(app) {
   const heading = app.querySelector('h1');
   if (!heading) return;
 
-  if (!heading.hasAttribute('tabindex')) {
-    heading.setAttribute('tabindex', '-1');
+  focusElement(heading);
+}
+
+function focusElement(element) {
+  if (!element) return;
+
+  if (!element.hasAttribute('tabindex')) {
+    element.setAttribute('tabindex', '-1');
   }
 
   requestAnimationFrame(() => {
-    heading.focus({ preventScroll: true });
+    element.focus({ preventScroll: true });
   });
+}
+
+function focusSectionTarget(app, sectionId) {
+  if (!sectionId) return false;
+
+  const target = app.querySelector(`#${CSS.escape(sectionId)}`);
+  if (!target) return false;
+
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    focusElement(target.querySelector('h1, h2, h3, h4') || target);
+  });
+
+  return true;
 }
 
 function getLoadErrorMarkup({ isLocalFile, lang }) {
@@ -254,10 +274,24 @@ function getPageUrl(fileName) {
 
 function parseRoute() {
   const hash = window.location.hash.replace(/^#\/?/, '');
-  if (hash.startsWith('es/')) {
-    return { routeKey: hash.slice(3) || '', lang: 'es' };
+  const [pathPart, queryString = ''] = hash.split('?');
+  const params = new URLSearchParams(queryString);
+  const legacySectionMatch = /^(pkg-|threshold-bridge|support-)/;
+  const sectionId = params.get('section');
+
+  if (pathPart.startsWith('es/')) {
+    let routeKey = pathPart.slice(3) || '';
+    if (!ROUTES[routeKey] && legacySectionMatch.test(routeKey)) {
+      return { routeKey: 'capabilities', lang: 'es', sectionId: routeKey };
+    }
+    return { routeKey, lang: 'es', sectionId };
   }
-  return { routeKey: hash || '', lang: 'en' };
+
+  if (!ROUTES[pathPart] && legacySectionMatch.test(pathPart)) {
+    return { routeKey: 'capabilities', lang: 'en', sectionId: pathPart };
+  }
+
+  return { routeKey: pathPart || '', lang: 'en', sectionId };
 }
 
 function getRoute() {
@@ -272,7 +306,7 @@ function getLang() {
   return document.documentElement.lang || 'en';
 }
 
-async function loadPage(routeKey) {
+async function loadPage(routeKey, { sectionId = null } = {}) {
   const route = ROUTES[routeKey] || ROUTES[''];
   const lang = getRouteLang();
   if (window.i18n?.setLang) {
@@ -352,8 +386,10 @@ async function loadPage(routeKey) {
     if (window.wireforms) window.wireforms();
     if (window.initMotion) window.initMotion();
 
-    window.scrollTo({ top: 0, behavior: 'auto' });
-    focusPrimaryHeading(app);
+    if (!focusSectionTarget(app, sectionId)) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      focusPrimaryHeading(app);
+    }
 
     const mobileNav = document.getElementById('mobile-nav');
     const navToggle = document.getElementById('nav-toggle');
@@ -387,22 +423,22 @@ async function loadPage(routeKey) {
 
 function init() {
   window.addEventListener('hashchange', () => {
-    const { routeKey, lang } = parseRoute();
+    const { routeKey, lang, sectionId } = parseRoute();
     if (window.i18n?.setLang) {
       window.i18n.setLang(lang);
     } else {
       document.documentElement.lang = lang;
     }
-    loadPage(routeKey);
+    loadPage(routeKey, { sectionId });
   });
 
-  const { routeKey, lang } = parseRoute();
+  const { routeKey, lang, sectionId } = parseRoute();
   if (window.i18n?.setLang) {
     window.i18n.setLang(lang);
   } else {
     document.documentElement.lang = lang;
   }
-  loadPage(routeKey);
+  loadPage(routeKey, { sectionId });
 }
 
 export { init, loadPage, getRoute, ROUTES };
