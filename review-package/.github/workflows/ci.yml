@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install validators
         run: npm install -g html-validate stylelint eslint@8 lhci/cli@0.14.x
@@ -31,9 +31,9 @@ jobs:
         run: eslint "src/js/*.js" --config .eslintrc.json || true
 
       - name: Link Check (lychee)
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2
         with:
-          args: --base . --exclude-all-private --no-progress --timeout 10 index.html pages/*.html
+          args: --root-dir . --exclude-all-private --no-progress --timeout 10 index.html pages/*.html
         continue-on-error: true
 
       - name: Lighthouse CI
