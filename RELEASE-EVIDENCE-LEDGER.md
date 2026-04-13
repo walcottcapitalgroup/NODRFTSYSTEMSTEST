@@ -36,7 +36,7 @@ Older evidence or release notes that describe the public commercial offer as Lau
 - price approval verification: pending founder decision review where source copy does not explicitly approve pricing
 
 ### 4. Resolved in this pass
-- pricing aligned to `Service & Pricing Architecture v1` (Discovery Sprint $2,000; Landing Page $1,950; Launch Site from $3,500; Authority Site from $6,800; Platform Starter from $12,000; Ecosystem Build from $28,000)
+- pricing aligned to `Service & Pricing Architecture v1` (Discovery Sprint $2,000; Landing Page $2,500; Launch Site from $3,500; Authority Site from $8,500; Platform Starter from $15,000; Ecosystem Build from $27,500; Growth Retainer $1,500/mo)
 - approved copy restored on Home, Capabilities, and About per `Copy System`
 - Spanish translation gaps closed on Careers, Inquiries, and Start pages
 - privacy snippets on Start and Careers aligned to approved Copy System text

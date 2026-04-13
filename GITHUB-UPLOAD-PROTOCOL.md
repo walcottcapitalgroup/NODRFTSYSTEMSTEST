@@ -69,6 +69,7 @@ If a manual browser upload is used instead of Git, verify that these hidden file
 - `.gitattributes`
 
 Preserve the folder structure exactly. The deployment workflow depends on `pages/` and `src/` remaining at the repository root.
+Upload the contents of `review-package/` into the repository root. Do not upload the `review-package` folder itself as a nested directory.
 
 ## Pre-Upload Checklist
 
@@ -96,5 +97,7 @@ Preserve the folder structure exactly. The deployment workflow depends on `pages
 - `pages/`, `src/`, `qa-docs/`, `robots.txt`, `sitemap.xml`, and `.github/workflows/ci.yml` were copied from the workspace
 - Repository support files `.gitignore` and `.gitattributes` are now included
 - Supplemental review docs are now included under `review-docs/`
+- `review-docs/NoDrftSystems_Pricing_Summary_Sheet_2026.md` is included in the review package
+- `review-package/` has been rechecked against the workspace deployment and review files for upload parity
 - Self-hosted font files (`src/assets/fonts/`) are included
 - Release recommendation remains `HOLD` until the blocking items in `RELEASE-EVIDENCE-LEDGER.md` are closed
